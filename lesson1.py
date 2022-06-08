@@ -1,26 +1,18 @@
 # # 1)написати прогу яка вибирає зі введеної строки цифри і виводить їх через кому,
 # st = 'as 23 fdfdg544'
-#
-#
-# def only_num(s):
-#     l = []
-#     [l.append(i) for i in s if i.isnumeric()]
-#     print(','.join(l))
-#
-#
-# only_num(st)
+# l = ', '.join([i for i in st if i.isnumeric()])
+# print(l)
 
-# # 2)написати прогу яка вибирає зі введеної строки числа і виводить їх так як вони написані
-# # наприклад:
-# st = 'as 23 fdfdg544 34 '
-#
-#
+
+# # # 2)написати прогу яка вибирає зі введеної строки числа і виводить їх так як вони написані
+# # # наприклад:
+# st = 'as 23 fdf33dg544 34 '
+# print(', '.join(''.join([i if i.isdigit() else ' ' for i in st]).split()))
+
 # def set_numeric(str):
-#     ln = []
-#     for i in str:
-#         if i.isdigit() or i.isspace():
-#             ln.append(i)
-#     print(''.join(ln).strip().replace(' ', ', '))
+#     for i in range(len(str)):
+#         if not str[i].isdigit():
+#             str[i] = ' '
 #
 #
 # set_numeric(st)
@@ -73,16 +65,15 @@
 
 # # - створити функцію яка повертає найбільше число з ліста
 # def get_max_of_list(lst):
-#     lst.sort()
-#     print(lst[-1])
-#     return lst[-1]
-# get_max_of_list([1,4,-2,9,-5])
+#     print(max(lst))
+#     return max(lst)
+# get_max_of_list([1,4,-2,9,-5, 13])
 
 # # - створити функцію яка повертає найменьше число з ліста
 # def get_min_of_list(lst):
 #     lst.sort()
-#     print(lst[0])
-#     return lst[0]
+#     print(min(lst))
+#     return min(lst)
 #
 #
 # get_min_of_list([4, -5, 5, 7])
@@ -115,10 +106,10 @@
 # #   - удалить все дубликаты в листе
 # print(set(list))
 
-# #   - заменить каждое четвертое значение на "Х"
-# for i in range(len(list)):
-#     if i % 4 == 0:
-#         list[i] = 'X'
+#   - заменить каждое четвертое значение на "Х"
+# list = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
+# for i in range(3, len(list), 4):
+#     list[i] = 'X'
 # print(list)
 
 # # 2)вывести на экран пустой квадрат из "*" сторона которого указана в переменой:
@@ -137,11 +128,11 @@
 #
 #
 # def multi(n):
-#     i = 1
-#     j = 1
+#     i = j = 1
 #     while i < n:
 #         while j < n:
-#             print(i*j, end=' ')
+#             print(i*j, end='')
+#             print('  ' if i*j // 10 else '   ', end='')
 #             j += 1
 #         print()
 #         i += 1
@@ -166,10 +157,12 @@
 #
 #
 # def replase_x(list):
-#     for i in range(len(list)):
-#         if i % 4 == 0:
-#             list[i] = 'X'
+#     for i in range(3, len(list), 4):
+#         list[i] = 'X'
 #     print('modified list: ', list)
+#
+#
+# replase_x([22, 3, 5, 2, 8, 2, -23, 8, 23, 5])
 #
 #
 # while True:
@@ -185,4 +178,3 @@
 #     elif k == 0:
 #         break
 #     print('Зробіть свій вибір')
-
